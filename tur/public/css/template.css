@@ -1,0 +1,567 @@
+
+@font-face {
+    font-family: 'cuzco-ultra';
+    src: url('../fonts/GTEestiProDisplay-UltraBold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: 'cuzco-bold';
+    src: url('../fonts/GTEestiProDisplay-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: 'cuzco-medium';
+    src: url('../fonts/GTEestiProDisplay-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: 'cuzco-light';
+    src: url('../fonts/GTEestiProDisplay-Light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+:root{
+    /* Definimos paleta de colores  */
+    --plomo: #dcdfe4;
+    --bgColorPrincipal: #1a2b49;
+    --bgwhite: #ffffff;
+    --bgButon: #0071eb;
+    --bgColorLigth: #d1f6e2;
+
+    /* variables par ala fuente */
+    --ultra: 'cuzco-ultra';
+    --bold: 'cuzco-bold';
+    --medium: 'cuzco-medium';
+    --light: 'cuzco-light';
+
+    /* Colors for font */
+    --colorFontPrincipal: #1a2b49;
+    --colorFontLinks: #0071eb;
+    --colorFontAlternative: #fffffF;
+
+    /* Colores de bootstrap */
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --withe: #ffffff;
+ 
+  
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+  }
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+   
+    overflow-x: hidden;
+    font-size: 1.8rem;
+}
+
+img{
+    width: 100%;
+}
+a{
+  text-decoration: none;
+}
+ul,li{
+  list-style: none;
+}
+.allContainer{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+/* STYLES FOR THE MAIN CONTAINER: HEADER */
+.headerContainer{
+  background-color: var(--bgwhite);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 72px;
+  font-family: var(--bold);
+}
+.logo{
+  flex: 1;
+}
+.searchBar{
+  
+  flex: 3;
+  display: flex;
+}
+.searchContainer{
+  flex: 9;  
+}
+.searchButon{
+  flex: 4;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  cursor: pointer;
+}
+.iconimg{
+  width: 30px;
+  height: 30px;
+}
+
+.searchBox{
+  background-color: var(--bgwhite);
+  color: #1a2b49;
+  padding: 8px 36px 8px 8px;
+  font-size: 18px;
+  line-height: 22px;
+  vertical-align: middle;
+  letter-spacing: normal;
+  word-spacing: 0px;
+  margin: 0px;
+  font-family: var(--bold);
+  border-style: solid;
+  border-color: var(--plomo);
+  border-right-style:none; 
+}
+.searchBox::placeholder{
+  color:#93959b;
+}
+.searchButon{
+  background-color: var(--bgButon);
+}
+.nav{
+  height: 100%;
+  flex: 9;
+}
+.secondPages{
+  height: 100%;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.pages{
+  width:max-content;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagesItem{
+  
+  color: var(--colorFontPrincipal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
+
+}
+.centro::before{
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: #1a2b49;
+  position: absolute;
+  left: 50;
+  bottom: 0; 
+  transition: all .3s;
+}
+
+.centro:hover:before{
+  width: 100%;
+  
+}
+
+
+
+.linkIcon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnSingin{
+  font-size: 16px;
+  color: var(--colorFontAlternative);
+  background-color: var(--bgButon);
+  width: 100%;
+  height: 50%;
+  border-radius: 5rem;
+  padding: 20px 20px;
+}
+.pad{
+  padding-left: 20px;
+}
+.nos{
+  display: none;
+}
+
+
+/* responsive header */
+@media (max-width: 1199px) {
+  .headerContainer{
+    max-height: 85.5px;
+}
+    .hide{
+      display: none;
+      
+    }
+    .nos{
+      display: none;
+    }
+}
+@media (max-width: 1125px) {
+  .searchBar{
+    padding-left: 30px;
+  }
+    .hidex2{
+      display: none;
+    }
+    .nos{
+      display: none;
+    }
+}
+@media (max-width: 767px) {
+  .headerContainer{
+      max-height: 75px;
+  }
+  .logo{
+    width: 100%;
+    flex: 5;
+  }
+    .searchContainer{
+      display: none;
+    }
+    .nav,.ul{
+      flex: auto;
+      padding-left: 0;
+      
+    }
+    .ul{
+      justify-content: space-between;
+    }
+    .searchBar{
+      display: none;
+    }
+    .nos{
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+   
+    .no{
+      width: 28px;
+      height: 28px;
+    }
+    .ini{
+      display: none;
+    }
+}
+
+
+/* STYLES FOR THE MAIN CONTAINER: MAIN */
+.mainContainer{
+  flex: 5;
+}
+.new-intro-banner{
+  height: 480px;
+  background-image:url(https://cdn.getyourguide.com/img/location/5c950a0cf3e0b.jpeg/99.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.new-intro-banner__content-container{
+  height: 100%;
+  padding:0 72px;
+  padding-bottom: 30px;
+  background: rgb(6,6,6);
+  background: linear-gradient(90deg, rgba(6,6,6,0.8428103663340336) 16%, rgba(255,255,255,0) 67%); 
+  color: var(--colorFontAlternative);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.new-intro-banner__content-intro, .new-intro-banner__content-title{
+  font-family: var(--bold);
+}
+.new-intro-banner__content-intro{
+  font-size: 36px;
+  padding-bottom: 10px;
+}
+.new-intro-banner__content-title{
+  font-size: 80px;
+}
+.new-intro-banner__datepicker-wrapper{
+  margin-top: 20px;
+}
+.datepicker{
+  background-color: var(--bgColorPrincipal);
+  width: 55%;
+  padding: 10px;
+}
+.datepicker-container--datepicker-desktop{
+  
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  
+  font-family: var(--medium);
+}
+.form-group-date-container--has-location{
+  
+  display: flex;
+
+  gap: 5px;
+}
+.datepicker-title{
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.input-group-datepicker-group{
+  flex: 3;
+  display: flex;
+  gap: 10px;
+  background-color:var(--bgwhite);
+  padding: 10px 10px;
+  
+  
+}
+.icon-calendar{
+  cursor: pointer;
+  width: 21px;
+}
+.input-group-datepicker-group input{
+  width: 172px;
+  display: flex;
+  border-style: none;
+  font-family: var(--medium);
+  font-size: 16px;
+  cursor: pointer;
+}
+.datepicker-check-availability{
+  border-style: none;
+  background-color: var(--bgButon);
+  border-radius: 26.5px;
+  width: 600px !important;
+  font-size: 16px;
+  font-family: var(--medium);
+  color: var(--colorFontAlternative);
+  cursor: pointer;
+}
+
+/*  STAYLE FONT TRAVELER CATEGORIES*/
+.container{
+  width: 100%;
+}
+.traveler-categories{
+  width: 100%;
+}
+.visibility-tracking-container{
+  display: flex;
+  
+  padding: 10px 0;
+}
+
+.traveler-category{
+  border-style: solid;
+  border-color: #dcdfe4;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.traveler-category:hover{
+  background-color: #c6dffa;
+}
+.c-icon{
+  width: 30px;
+  display: flex;
+  align-items: center;
+}
+.c-icon--icon{
+  height: 25px;
+  width: 25px;
+}
+
+.traveler-category_name{
+  font-family: var(--medium);
+  font-size: 15px;
+  color: var(--colorFontPrincipal);
+}
+.mou{
+  color: rebeccapurple;
+}
+
+/* STYLES FOR TRAVEL CARDS INFO */
+.travel__cards{
+  padding: 0 72px;
+}
+.headline-travel-card--title{
+  
+  font-family: var(--medium);
+  color: var(--colorFontPrincipal);
+  font-size: 28px;
+  padding: 20px 0;
+}
+
+  /* TRAVEL CARD CSS ONLY SATART */
+.wishlist-icon__heart{
+  background-image: url(https://cdn.getyourguide.com/tf/assets/static/icons/heart-photo-sprite.png);
+background-position: -30px 0;
+background-repeat: no-repeat;
+display: block;
+height: 28px;
+width: 30px;  
+}
+
+
+/* TRAVEL CARD CSS ONLY END */
+
+
+/* STYLES FOR THE MAIN CONTAINER: FOOTER */
+.footerContainer{
+  background-color: var(--bgColorPrincipal);
+  flex: 2;
+  display: flex;
+}
+.footerContent{
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+}
+.footerNav{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: var(--medium);
+  color: #ffffff;
+}
+.footerNav a{
+  color: #ffffff;
+}
+.footerNav__directory{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: 30px;
+  padding: 10px 72px;
+  font-size: 14px
+}
+.footerNav__directory label{
+  font-size: 18px;
+}
+.footerNav__directory-preferences{
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+fieldset{
+  border-style: none;
+}
+.footer-language-selector, .footer-currency-selector{
+    height: 40px;
+    font-family: inherit;
+    font-size: 18px;
+    border-style: solid;
+    border-radius: 0px;
+    width: 80%;
+    
+    color: var(--colorFontPrincipal);
+}
+.footer__change-language, .footer__change-currency{
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.navigation__item-selector-select-field{
+  padding-top: 10px;
+}
+
+.navigation__item-section_support-icon,.navigation__item-section_company-icon, .navigation__item-section_work_whit_us-icon{
+  display: none;
+}
+.navigation__item-section_mobile{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.app__logo{
+  width: 90%;
+  height: 90%;
+}
+.navigation__item-section_support, .navigation__support-item-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navigation__item-section_company, .navigation__company-item-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navigation__item-section_work_whit_us, .navigation__work_whit_us-item-list, .navigation__item-section_ways_you_can_pay{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.navigation__item-label{
+  padding-top: 10px;
+}
+.link-item{
+transition: .3s;
+}
+.link-item:hover{
+  color: #ffc107;
+}
+.navigation__item-section_ways_you_can_pay-images{
+  width: 80%;
+}
+.navigation__item-section_ways_you_can_pay-images-pay{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+.navigation__item-section_ways_you_can_pay-images-pay div img{
+  width: 90%;
+}
+.navigation__directory{
+  display: flex;
+  padding: 0 50px;
+}
+.navigation__item-section_copyright{
+  flex: 5;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.navigation__item-section_social_media{
+  flex: 5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px 0 ;
+}
